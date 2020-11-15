@@ -29,6 +29,7 @@ Predicting the features of a product based on it's image allows for matching sim
 The following steps will enable you to use a pretrained model to predict the features of a fashion product. You can either use example data provided in this repository or test the model on your own images.
 
 - clone the repository
+- download some example data by executing the `download_iMaterialistValSet.py`. This will download the validation set of the iMaterialist Dataset. If you want to work with more data, only little changes in `download_iMaterialistValSet.py` and some more files that can be downloaded from the competition website are necessary.
 - download the pretrained model weights from <a href="https://drive.google.com/drive/folders/1EdsssrHV3g1cCNSLd2zke3qwBdNVCOjj?usp=sharing">here</a> (not included in repo due to quota constraints)
 - open the jupyter notebook `notebooks/score_model.ipynb`
 - follow the notebook instructions
