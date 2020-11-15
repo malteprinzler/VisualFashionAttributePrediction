@@ -22,6 +22,8 @@ The contents of this repository can be used for many applications. An incomplete
 
 ## Results
 ### Attribute Prediction
+Predicted attributes on the validation set.
+
 ![](MISC/scoring_examples/1.PNG)
 
 ![](MISC/scoring_examples/2.PNG)
@@ -33,7 +35,7 @@ The contents of this repository can be used for many applications. An incomplete
 For more information please refer to `notebooks/attribute_prediction.ipynb`. If you want to score a pretrained model on own data, please follow the QuickStart instructions below.
 
 ### Product Matching
-Predicting the attributes of a product based on it's image allows for matching similar products solely based on their visual appearence. 
+Predicting the attributes of a product based on it's image allows for matching similar products solely based on their visual appearence. In the following, I randomly picked some images from the web and matched them against the validation partition of the iMaterialist Fashion dataset.
 
 ![](MISC/matching_examples/matching_example.png)
 
