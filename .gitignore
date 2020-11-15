@@ -1,0 +1,7 @@
+.idea
+*checkpoints
+/scratches
+/lightning_logs
+/Data
+/exports
+*/__pycache__
