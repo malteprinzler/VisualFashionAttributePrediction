@@ -47,7 +47,6 @@ class AttrPred_Resnet50(pl.LightningModule):
         self.log("avg_val_loss", val_loss, prog_bar=True, on_epoch=True)
 
 
-
 if __name__ == "__main__":
     model = AttrPred_Resnet50(228, prediction_threshold=.0)
     trainer = pl.Trainer()

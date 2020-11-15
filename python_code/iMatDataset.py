@@ -65,7 +65,7 @@ class iMatDataModule(pl.LightningDataModule):
         self.train_filename = train_filename
         self.train_img_path = os.path.join(self.root_dir, "train")
         self.val_filename = val_filename
-        self.val_img_path = os.path.join(self.root_dir, "val")
+        self.val_img_path = os.path.join(self.root_dir, "validation")
         self.attr_descr_file = attr_descr_filename
 
         self.image_augmentations = image_augmentations
@@ -107,7 +107,7 @@ class iMatDataModule(pl.LightningDataModule):
         # Validation Set
         n_val_images = int(self._get_nr_of_samples_in_json(self.val_filename) * self.ratio)
         if not os.path.exists(self.val_img_path) or len(os.listdir(self.val_img_path)) < n_val_images:
-            print("need to download val data")
+            print("need to download validation data")
             download_iMaterialistFashion(os.path.join(self.root_dir, self.val_filename), self.val_img_path,
                                          n_val_images)
 
@@ -166,7 +166,8 @@ class iMatDataset(Dataset):
     """
 
     def __init__(self, labels_file, img_dir, attr_descr_file, image_augmentations=list(), img_height=512, img_width=512,
-                 length=None):
+                 length=None, rgb_mean=[0.6765103936195374, 0.6347460150718689, 0.6207206845283508],
+                 rgb_std=[0.3283524215221405, 0.33712077140808105, 0.3378842771053314]):
         """
         :param labels_file: path to json file with labels
         :param img_dir: path to directory with image files
@@ -195,8 +196,6 @@ class iMatDataset(Dataset):
         else:
             resize = []
 
-        rgb_mean = [0.6765103936195374, 0.6347460150718689, 0.6207206845283508]  # calculated from the first 1000 imgs
-        rgb_std = [0.3283524215221405, 0.33712077140808105, 0.3378842771053314]  # in the training set
         Normalization = Normalize(mean=rgb_mean, std=rgb_std)
         self.trafo_pil2tensor = Compose(image_augmentations + resize + [ToTensor(), Normalization])
         mean_bwd, std_bwd = torch.tensor(rgb_mean, dtype=torch.float), torch.tensor(rgb_std, dtype=torch.float)
@@ -245,7 +244,6 @@ class iMatDataset(Dataset):
         mean = colors.mean(dim=1).tolist()
         std = colors.std(dim=1).tolist()
         return dict(mean=mean, std=std)
-
 
     def attrIdcs2attrNames(self, attr_idc):
         if isinstance(attr_idc, torch.Tensor):
