@@ -35,7 +35,11 @@ For more information please refer to `notebooks/attribute_prediction.ipynb`. If 
 ### Product Matching
 Predicting the attributes of a product based on it's image allows for matching similar products solely based on their visual appearence. 
 
-![](MISC/matching_example.png)
+![](MISC/matching_examples/matching_example.png)
+
+![](MISC/matching_examples/matching_example_1.png)
+
+![](MISC/matching_examples/matching_example_2.png)
 
 For more information please refer to the jupyter notebook `notebooks/product_matching.ipynb`.
 
@@ -57,7 +61,7 @@ I used random color jitter and random horizontal flipping as image augmentation 
 
 I trained the model on 4 nvidia 2080ti gpus with a memory of 11 gb each which allowed me to use a mini batch size of 12. The model converged after 4 epochs (~ 1 day of training).
 
-## Trained Model Weights:
+## TODO: UPLOAD WEIGHTS! Trained Model Weights:
 Due to quota limitations on github, I provide trained models on this <a href="https://drive.google.com/drive/folders/1EdsssrHV3g1cCNSLd2zke3qwBdNVCOjj?usp=sharing">link</a> to my google drive. The model is stored in the following formats:
 
 - .onnx
