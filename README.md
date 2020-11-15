@@ -5,7 +5,7 @@ Extraction of fashion product attributes based on images from the apparel indust
 
 
 ## About This Project
-This repository implements my solution of the <a href="https://www.kaggle.com/c/imaterialist-challenge-fashion-2018">Kaggle iMaterialist Challenge (Fashion) at FCVC5 </a>. The competition's goal was to predict attributes of products from the apparel industry based on images of the products. The products are selected from a variety of domains e.g. shoes, jackets, necklaces and many more and the target features contain information about the product's category, material, appearance and more. For more information please refer to the competition website or have a look at the `notebooks/iMaterialist_Overview.ipynb` file in which I present a short overview over the dataset.
+This repository implements my solution of the <a href="https://www.kaggle.com/c/imaterialist-challenge-fashion-2018">Kaggle iMaterialist Challenge (Fashion) at FCVC5 </a>. The competition's goal was to predict attributes of products from the apparel industry based on images of the products. The products are selected from a variety of domains e.g. shoes, jackets, necklaces and many more and the target features contain information about the product's category, material, appearance and more. For more information please refer to the competition website.
 
 My personal goal for this competition was to solidify my pytorch skills and to familiarize myself with the <a href="https://github.com/PyTorchLightning/pytorch-lightning">pytorch lightning</a> package, an open-source Python library that provides a high-level interface for PyTorch. For this reason, I solely focused on the training of one model (Resnet50) and did not put much effort into stacking several models together as suggested by the <a href="https://www.kaggle.com/c/imaterialist-challenge-fashion-2018/discussion/57944">winner of the Kaggle competition<a/>.
 
@@ -34,6 +34,8 @@ For more information please refer to `notebooks/attribute_prediction.ipynb`. If 
 
 ### Product Matching
 Predicting the attributes of a product based on it's image allows for matching similar products solely based on their visual appearence. 
+
+![](MISC/matching_example.png)
 
 For more information please refer to the jupyter notebook `notebooks/product_matching.ipynb`.
 
