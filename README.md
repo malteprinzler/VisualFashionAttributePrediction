@@ -59,7 +59,7 @@ The following steps will enable you to use a pretrained model to predict the att
 ## Model Architecture + Training
 The model architecture consists of a standard ResNet50 body that was pretrained on ImageNet and is provided by pytorch. I replaced the fully connected head by a fully connected output layer of shape (2048[output of resnet_body] x 228[number of different features]). As we have a situation in which multiple features can be right for the same samples, instead of a crossentropy loss, I use a 228-dimensional binary cross entropy loss.I chose to use a standard Adam optimizer with default parameters and leave it to pycharm lightning to take care of the learning rate schedule. 
 
-I used random color jitter and random horizontal flipping as image augmentation techniques (provided by torchvision.transforms). The images from the iMaterialist Dataset are augmented, normalized and resized to (512x512).  
+I used random color jitter and random horizontal flipping as image augmentation techniques (provided by torchvision.transforms). The images from the iMaterialist Dataset are augmented, normalized (offset: [0.6765, 0.6347, 0.6207], std=[0.3284, 0.3371, 0.3379]) and resized to (512x512).  
 
 I trained the model on 4 nvidia 2080ti gpus with a memory of 11 gb each which allowed me to use a mini batch size of 12. The model converged after 4 epochs (~ 1 day of training).
 
@@ -70,4 +70,4 @@ Due to quota limitations on github, I provide trained models on this <a href="ht
 - .chkpt (pytorch lightning checkpoint)
 - .pth (pytorch model state dict)
 
-For instructions on how to load the model, please see the <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">official pytorch documentation</a>
+For instructions on how to load the model, please see the <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">official pytorch documentation</a>. Please make sure to use normalized RGB images as input for the model (offset: [0.6765, 0.6347, 0.6207], std=[0.3284, 0.3371, 0.3379]), otherwise the model performance may decrease drastically!
