@@ -61,9 +61,9 @@ The model architecture consists of a standard ResNet50 body that was pretrained 
 
 I used random color jitter and random horizontal flipping as image augmentation techniques (provided by torchvision.transforms). The images from the iMaterialist Dataset are augmented, normalized (offset: [0.6765, 0.6347, 0.6207], std=[0.3284, 0.3371, 0.3379]) and resized to (512x512).  
 
-I trained the model on 4 nvidia 2080ti gpus with a memory of 11 gb each which allowed me to use a mini batch size of 12. The model converged after 4 epochs (~ 1 day of training).
+I trained the model on 4 nvidia 2080ti gpus with a memory of 11 gb each which allowed me to use a mini batch size of 12. The model converged after 3 epochs (~ 1 day of training).
 
-## TODO: UPLOAD WEIGHTS! Trained Model Weights:
+## Trained Model Weights:
 Due to quota limitations on github, I provide trained models on this <a href="https://drive.google.com/drive/folders/1EdsssrHV3g1cCNSLd2zke3qwBdNVCOjj?usp=sharing">link</a> to my google drive. The model is stored in the following formats:
 
 - .onnx
