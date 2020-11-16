@@ -23,15 +23,12 @@ def export2sas(argstring=None):
     # print(summary(model, input_size=(3, 512, 512), device="cpu"))
 
     input_sample = torch.rand((1, 3, 512, 512))
-    # model.to_onnx(output_path, input_sample, export_params=True, input_names=["input"], output_names=["output"],
-    #               dynamic_axes={"input": {0: 'batch_size'}, "output": {0: "batch_size"}})
-    model.to_onnx(output_path, input_sample, export_params=True)
+    model.to_onnx(output_path, input_sample, export_params=True, input_names=["input"], output_names=["output"],
+                  dynamic_axes={"input": {0: 'batch_size'}, "output": {0: "batch_size"}})
+
+    print(f"Exported Model successfully to {output_path}")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) <= 1:
-        source_file = "../lightning_logs/version_7064773/checkpoints/epoch=3.ckpt"
-        outfile = "../exports/attr_pred_model.onnx"
-        export2sas(f"-c {source_file} -o {outfile}")
-    else:
-        export2sas()
+    export2sas()
+
