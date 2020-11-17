@@ -45,7 +45,13 @@ Predicting the attributes of a product based on it's image allows for matching s
 
 For more information please refer to the jupyter notebook `notebooks/product_matching.ipynb`.
 
-
+## Requirements:
+- torch 1.4.0
+- pytorch_lightning 1.0.6
+- torchvision 0.5.0
+- Pillow 7.0.0
+- onnx 1.8.0
+- onnxruntime 1.5.2
 
 ## QuickStart
 The following steps will enable you to use a pretrained model to predict the attributes of a fashion product. You can either use example data provided in this repository or test the model on your own images.
