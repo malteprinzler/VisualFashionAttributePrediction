@@ -184,8 +184,11 @@ class iMatDataset(Dataset):
         self.img_dir = img_dir
 
         # getting labels
-        with open(labels_file, "r") as f:
-            self.labels = json.load(f)["annotations"]
+        if labels_file and os.path.exists(labels_file):
+            with open(labels_file, "r") as f:
+                self.labels = json.load(f)["annotations"]
+        else:
+            self.labels = []
 
         ###
         # Transformations
@@ -206,7 +209,8 @@ class iMatDataset(Dataset):
 
         self.attr_descr = self.get_attribute_description(attr_descr_file)
         self.n_attrs = len(self.attr_descr)
-        self.len = (length if length is not None else min(len(self.labels), len(os.listdir(self.img_dir))))
+        self.len = (length if length is not None else min(len(self.labels),
+                                                          len(os.listdir(self.img_dir)) if self.img_dir else 0))
 
     def __getitem__(self, item):
         """
