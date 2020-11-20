@@ -76,7 +76,10 @@ Due to quota limitations on github, I provide trained models on this <a href="ht
 - .onnx
 - .chkpt (pytorch lightning checkpoint)
 - .pth (pytorch model state dict)
-
-There is an .onnx file for SAS applications specifically. It differs from the other .onnx file in that it's batch size is fixed to 1 which is crucial for importing it into SAS. SAS is an leading multinational developer of analytics software and my former employer. 
+- .sashdat (SAS files)
 
 For instructions on how to load the model, please see the <a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">official pytorch documentation</a>. Please make sure to use normalized RGB images as input for the model (offset: [0.6765, 0.6347, 0.6207], std=[0.3284, 0.3371, 0.3379]), otherwise the model performance may decrease drastically!
+
+There is an .onnx file for SAS applications specifically. It differs from the other .onnx file in that it's batch size is fixed to 1 which is crucial for importing it into SAS. SAS is an leading multinational developer of analytics software and my former employer. In the `notebooks` directory, you will also find a notebook in which I load the SAS .onnx file, convert it into a SAS model and perform inference with it. The results vary slightly from the ones with open source based model versions. I also exported the model to .sashdat and .astore files and provide them along with the other pretrained model files. 
+
+
