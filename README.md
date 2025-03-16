@@ -9,7 +9,7 @@ This repository implements my solution of the <a href="https://www.kaggle.com/c/
 
 My personal goal for this competition was to solidify my pytorch skills and to familiarize myself with the <a href="https://github.com/PyTorchLightning/pytorch-lightning">pytorch lightning</a> package, an open-source Python library that provides a high-level interface for PyTorch. For this reason, I solely focused on the training of one model (Resnet50) and did not put much effort into stacking several models together as suggested by the <a href="https://www.kaggle.com/c/imaterialist-challenge-fashion-2018/discussion/57944">winner of the Kaggle competition<a/>.
 
-In addition to the model training pipeline, this repository provides a completely trained model for attribute prediction <a href="https://drive.google.com/drive/folders/1EdsssrHV3g1cCNSLd2zke3qwBdNVCOjj?usp=sharing">here</a> and jupyter notebooks for easily scoring new product images and finding the most similar products in a reference dataset, given a query image (see `notebooks` folder). 
+In addition to the model training pipeline, this repository provides a completely trained model for attribute prediction <a href="https://keeper.mpdl.mpg.de/d/7212e61e34264a2595ac">here</a> and jupyter notebooks for easily scoring new product images and finding the most similar products in a reference dataset, given a query image (see `notebooks` folder). 
 
 The contents of this repository can be used for many applications. An incomplete list of possible topics:
 
