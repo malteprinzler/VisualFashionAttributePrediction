@@ -71,7 +71,7 @@ I used random color jitter and random horizontal flipping as image augmentation 
 I trained the model on 4 nvidia 2080ti gpus with a memory of 11 gb each which allowed me to use a mini batch size of 12. The model converged after 3 epochs (~ 1 day of training).
 
 ## Trained Model Weights:
-Due to quota limitations on github, I provide trained models on this <a href="https://drive.google.com/drive/folders/1EdsssrHV3g1cCNSLd2zke3qwBdNVCOjj?usp=sharing">link</a> to my google drive. The model is stored in the following formats:
+Due to quota limitations on github, I provide trained models on this <a href="https://keeper.mpdl.mpg.de/d/7212e61e34264a2595ac/">link</a> to my google drive. The model is stored in the following formats:
 
 - .onnx
 - .chkpt (pytorch lightning checkpoint)
